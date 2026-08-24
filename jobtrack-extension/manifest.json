@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "JobTrack",
+  "version": "1.0.0",
+  "description": "Track your job applications automatically with JobTrack",
+
+  "permissions": [
+    "storage",
+    "scripting",
+    "webRequest",
+    "sidePanel"
+  ],
+
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://www.naukri.com/*",
+    "https://internshala.com/*",
+    "https://www.unstop.com/*",
+    "https://*/*",
+    "http://localhost:8081/*"
+  ],
+
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+
+  "action": {
+    "default_title": "Open JobTrack"
+  },
+
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/*",
+        "https://www.naukri.com/*",
+        "https://internshala.com/*",
+        "https://www.unstop.com/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content-scripts/extract-job.js"
+      ]
+    }
+  ],
+
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
