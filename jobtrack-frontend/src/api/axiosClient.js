@@ -1,8 +1,16 @@
 import axios from 'axios'
 
-// Points at the backend from Decision Log Entry 7 -- port 8081, not 8080.
+// Priority: explicit Vite build-time env (static site deploys) > runtime-
+// injected value (Docker/nginx deploys) > localhost default for plain
+// `npm run dev`. Reversed from before -- an explicitly-set VITE_API_BASE_URL
+// must always win over the local-dev placeholder baked into public/env-config.js.
+const API_BASE_URL =
+    import.meta.env.VITE_API_BASE_URL ||
+    window.__ENV__?.API_BASE_URL ||
+    'http://localhost:8081/api'
+
 const axiosClient = axios.create({
-    baseURL: 'http://localhost:8081/api',
+    baseURL: API_BASE_URL,
     headers: { 'Content-Type': 'application/json' },
 })
 
