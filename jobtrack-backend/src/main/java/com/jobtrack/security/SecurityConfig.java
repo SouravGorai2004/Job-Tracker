@@ -1,4 +1,4 @@
-package com.jobtrack.config;
+package com.jobtrack.security;
 
 import com.jobtrack.security.CustomUserDetailsService;
 import com.jobtrack.security.JwtAuthenticationFilter;
