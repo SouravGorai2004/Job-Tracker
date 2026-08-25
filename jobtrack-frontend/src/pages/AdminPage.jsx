@@ -28,20 +28,31 @@ export default function AdminPage() {
     useEffect(() => {
         async function load() {
             setLoading(true)
-            try {
-                const [statsRes, feedbackRes, loveRes] = await Promise.all([
-                    adminApi.getStats(),
-                    feedbackApi.getAll(),
-                    loveApi.getAll(),
-                ])
-                setStats(statsRes.data)
-                setFeedback(feedbackRes.data || [])
-                setLove(loveRes.data || [])
-            } catch (err) {
-                console.error('Admin load error:', err)
-            } finally {
-                setLoading(false)
+            const [statsResult, feedbackResult, loveResult] = await Promise.allSettled([
+                adminApi.getStats(),
+                feedbackApi.getAll(),
+                loveApi.getAll(),
+            ])
+
+            if (statsResult.status === 'fulfilled') {
+                setStats(statsResult.value.data)
+            } else {
+                console.error('Stats load error:', statsResult.reason)
             }
+
+            if (feedbackResult.status === 'fulfilled') {
+                setFeedback(feedbackResult.value.data || [])
+            } else {
+                console.error('Feedback load error:', feedbackResult.reason)
+            }
+
+            if (loveResult.status === 'fulfilled') {
+                setLove(loveResult.value.data || [])
+            } else {
+                console.error('Love load error:', loveResult.reason)
+            }
+
+            setLoading(false)
         }
         load()
     }, [])
