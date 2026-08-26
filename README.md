@@ -33,7 +33,6 @@ This isn't a generic CRUD "job management system" — it's an automation-first p
 
 ## 📸 Screenshots
 
-> Replace these placeholders with real screenshots before publishing — a README with actual visuals of the dashboard, application detail/timeline view, analytics charts, and the extension popup converts far better than text alone.
 
 | Dashboard | Application Timeline |
 |---|---|
