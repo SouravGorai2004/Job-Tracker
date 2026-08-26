@@ -37,11 +37,11 @@ This isn't a generic CRUD "job management system" — it's an automation-first p
 
 | Dashboard | Application Timeline |
 |---|---|
-| `![Dashboard](docs/screenshots/dashboard.png)` | `![Timeline](docs/screenshots/timeline.png)` |
+| ![Dashboard](docs/screenshots/dashboard.png) | ![Timeline](docs/screenshots/timeline.png) |
 
 | Analytics | Browser Extension |
 |---|---|
-| `![Analytics](docs/screenshots/analytics.png)` | `![Extension](docs/screenshots/extension.png)` |
+| ![Analytics](docs/screenshots/analytics.png) | ![Extension](docs/screenshots/extension.png) |
 
 ---
 
