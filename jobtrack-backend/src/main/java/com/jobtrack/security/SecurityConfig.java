@@ -70,16 +70,12 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOrigins(List.of(
-                "https://job-tracker-app-itmc.onrender.com"
+                "https://job-tracker-app-itmc.onrender.com",
+                "chrome-extension://dkdajmlabbpgdecagfgkkflncomhncmm"
         ));
 
         configuration.setAllowedMethods(List.of(
-                "GET",
-                "POST",
-                "PUT",
-                "DELETE",
-                "PATCH",
-                "OPTIONS"
+                "GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"
         ));
 
         configuration.setAllowedHeaders(List.of("*"));

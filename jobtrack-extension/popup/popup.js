@@ -2,7 +2,7 @@ class JobTrackPopup {
     constructor() {
         this.authToken = null;
         this.user = null;
-        this.backendUrl = 'http://localhost:8081/api';
+        this.backendUrl = 'https://job-tracker-ugux.onrender.com/api';
 
         this.init().catch(error => {
             console.error('Initialization failed:', error);

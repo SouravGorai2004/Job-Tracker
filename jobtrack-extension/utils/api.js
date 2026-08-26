@@ -1,6 +1,6 @@
 class JobTrackAPI {
     constructor() {
-        this.baseUrl = 'http://localhost:8081/api';
+        this.baseUrl = 'https://job-tracker-ugux.onrender.com/api';
     }
 
     async request(endpoint, options = {}) {
