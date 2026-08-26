@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 JobTrack
+#  JobTrack
 
 ### Automated Job Application Intelligence & Tracking Platform
 
